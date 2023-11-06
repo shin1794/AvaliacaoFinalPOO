@@ -1,12 +1,13 @@
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 import model.Animal;
 import model.Clinica;
 import model.Cao;
 import model.Gato;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -90,30 +91,38 @@ public class Main {
                     System.out.println("Digite o nome do animal para adicionar o histórico médico: ");
                     String nomeAnimalHistorico = scanner.nextLine();
 
-                    boolean encontrouHistorico = false;
                     for (Animal animal : clinica.getAnimaisRegistrados()) {
                         if (animal.getNome().equalsIgnoreCase(nomeAnimalHistorico)) {
-                            System.out.println("Digite a data do histórico médico: ");
-                            String data = scanner.nextLine();
-                            System.out.println("Digite a descrição dos sintomas: ");
-                            String sintomas = scanner.nextLine();
-                            System.out.println("Digite o diagnóstico: ");
-                            String diagnostico = scanner.nextLine();
-                            System.out.println("Digite o tratamento: ");
-                            String tratamento = scanner.nextLine();
-                            System.out.println("Digite as observações: ");
-                            String observacoes = scanner.nextLine();
+                            System.out.println("Digite a data do histórico médico(dd/MM/yyyy)");
+                            String dataString = scanner.nextLine();
+                            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
-                            clinica.adicionarHistoricoMedico(animal, data, sintomas, diagnostico, tratamento, observacoes);
-                            encontrouHistorico = true;
-                            System.out.println("Histórico médico adicionado com sucesso!");
-                            break;
+                            try {
+                                Date data = dateFormatter.parse(dataString);
+                                String dataFormatada = dateFormatter.format(data);
+                                System.out.println("Digite a descrição dos sintomas: ");
+                                String sintomas = scanner.nextLine();
+                                System.out.println("Digite o diagnóstico: ");
+                                String diagnostico = scanner.nextLine();
+                                System.out.println("Digite o tratamento: ");
+                                String tratamento = scanner.nextLine();
+                                System.out.println("Digite as observações: ");
+                                String observacoes = scanner.nextLine();
+
+                                clinica.adicionarHistoricoMedico(animal, dataFormatada, sintomas, diagnostico, tratamento, observacoes);
+                                System.out.println("Histórico médico adicionado com sucesso!");
+
+                            } catch (ParseException e) {
+                                System.out.println("Erro ao converter a data! Certifique-se de usar o formato dd/MM/yyyy.");
+                            }
+
+                        }else{
+                            System.out.println("Animal não encontrado!");
                         }
                     }
-                    if (!encontrouHistorico) {
-                        System.out.println("Animal não encontrado!");
-                    }
+
                     break;
+
                 case 5:
                     System.out.println("\n");
                     clinica.listarHistoricosMedicos();
@@ -130,5 +139,3 @@ public class Main {
         scanner.close();
     }
 }
-
-
