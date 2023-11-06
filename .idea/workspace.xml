@@ -7,10 +7,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2Xo5SONmlZuizSeqpXBGMqZzded" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -21,6 +21,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/FATEC_PC/4 semestre/Programação orientada a objeto/teste1",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -33,6 +34,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699282595005</updated>
       <workItem from="1699282599703" duration="68000" />
+      <workItem from="1699284703582" duration="41000" />
     </task>
     <servers />
   </component>
