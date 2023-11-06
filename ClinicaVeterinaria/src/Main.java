@@ -115,7 +115,6 @@ public class Main {
                             } catch (ParseException e) {
                                 System.out.println("Erro ao converter a data! Certifique-se de usar o formato dd/MM/yyyy.");
                             }
-
                         }else{
                             System.out.println("Animal não encontrado!");
                         }
