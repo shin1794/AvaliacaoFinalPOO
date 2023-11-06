@@ -48,11 +48,11 @@ public class Clinica {
         }
     }
 
-    public void adicionarHistoricoMedico(Animal animal, String data, String sintomas, String diagnostico, String tratamento, String observacoes) {
+    public void adicionarHistoricoMedico(Animal animal, String dataFormatada, String sintomas, String diagnostico, String tratamento, String observacoes) {
         int index = animaisRegistrados.indexOf(animal);
         if (index != -1) {
             String historicoAnimal = historicosMedicos.get(index);
-            historicoAnimal += "Data: " + data + "\n";
+            historicoAnimal += "Data: " + dataFormatada + "\n";
             historicoAnimal += "Sintomas: " + sintomas + "\n";
             historicoAnimal += "Diagnóstico: " + diagnostico + "\n";
             historicoAnimal += "Tratamento: " + tratamento + "\n";
