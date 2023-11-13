@@ -1,8 +1,6 @@
 package model;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class Clinica {
     private List<Animal> animaisRegistrados;
     private List<String> historicosMedicos;
@@ -48,7 +46,8 @@ public class Clinica {
         }
     }
 
-    public void adicionarHistoricoMedico(Animal animal, String dataFormatada, String sintomas, String diagnostico, String tratamento, String observacoes) {
+    public void adicionarHistoricoMedico(Animal animal, String dataFormatada, String sintomas,
+                                         String diagnostico, String tratamento, String observacoes) {
         int index = animaisRegistrados.indexOf(animal);
         if (index != -1) {
             String historicoAnimal = historicosMedicos.get(index);
@@ -70,6 +69,7 @@ public class Clinica {
             System.out.println("--------------------------------------");
         }
     }
+
 }
 
 

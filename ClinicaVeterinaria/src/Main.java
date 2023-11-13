@@ -30,56 +30,54 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    scanner.nextLine(); // Limpar o buffer
-                    System.out.println("Digite o nome do animal: ");
-                    String nome = scanner.nextLine();
-                    System.out.println("Digite a espécie do animal: ");
-                    String especie = scanner.nextLine();
-                    System.out.println("Digite o nome do dono do animal: ");
-                    String dono = scanner.nextLine();
+                    try{
+                        String nome = readNonEmptyInput(scanner, "Digite o nome do animal: ");
+                        String especie = readNonEmptyInput(scanner, "Digite a espécie do animal: ");
+                        String dono = readNonEmptyInput(scanner, "Digite o nome do dono do animal: ");
 
-                    System.out.println("O animal é um cão (1) ou um gato (2)? ");
-                    int tipoAnimal = scanner.nextInt();
-
-                    if (tipoAnimal == 1) {
+                        System.out.println("O animal é um cão (1) ou um gato (2)? ");
+                        int tipoAnimal = scanner.nextInt();
                         scanner.nextLine(); // Limpar o buffer
-                        System.out.println("Digite a raça do cão: ");
-                        String raca = scanner.nextLine();
 
-                        Cao cao = new Cao(nome, especie, dono, raca);
-                        clinica.registrarAnimal(cao);
-                        System.out.println("Cão registrado com sucesso!");
-                    } else if (tipoAnimal == 2) {
-                        scanner.nextLine(); // Limpar o buffer
-                        System.out.println("Digite o tipo de pelagem do gato: ");
-                        String tipoPelagem = scanner.nextLine();
+                        if (tipoAnimal == 1) {
+                            String raca = readNonEmptyInput(scanner, "Digite a raça do cão: ");
+                            Cao cao = new Cao(nome, especie, dono, raca);
+                            clinica.registrarAnimal(cao);
+                            System.out.println("Cão registrado com sucesso!");
+                        } else if (tipoAnimal == 2) {
+                            String tipoPelagem = readNonEmptyInput(scanner, "Digite o tipo de pelagem do gato: ");
+                            Gato gato = new Gato(nome, especie, dono, tipoPelagem);
+                            clinica.registrarAnimal(gato);
+                            System.out.println("Gato registrado com sucesso!");
+                        } else {
+                            System.out.println("Opção inválida!");
+                        }
 
-                        Gato gato = new Gato(nome, especie, dono, tipoPelagem);
-                        clinica.registrarAnimal(gato);
-                        System.out.println("Gato registrado com sucesso!");
-                    } else {
-                        System.out.println("Opção inválida!");
-                    }
+                } catch (Exception e) {
+                    System.out.println("Exceção capturada: " + e.getMessage());
+                }
+
                     break;
 
                 case 2:
-                    scanner.nextLine(); // Limpar o buffer
-                    System.out.println("Digite o nome do animal a ser removido: ");
-                    String nomeAnimal = scanner.nextLine();
+                    try{
+                        scanner.nextLine(); // Limpar o buffer
+                        String nomeAnimal = readNonEmptyInput(scanner, "Digite o nome do animal a ser removido: ");
 
-                    boolean encontrou = false;
-                    for (Animal animal : clinica.getAnimaisRegistrados()) {
-                        if (animal.getNome().equalsIgnoreCase(nomeAnimal)) {
-                            clinica.removerRegistro(animal);
-                            encontrou = true;
-                            System.out.println("Registro removido com sucesso!");
-                            break;
+                        for (Animal animal : clinica.getAnimaisRegistrados()) {
+                            if (animal.getNome().equalsIgnoreCase(nomeAnimal)) {
+                                clinica.removerRegistro(animal);
+                                System.out.println("Registro removido com sucesso!");
+                                break;
+                            }else{
+                                System.out.println("Animal não encontrado!");
+                            }
                         }
+                        break;
+                    }catch (Exception e) {
+                        System.out.println("Exceção capturada: " + e.getMessage());
                     }
-                    if (!encontrou) {
-                        System.out.println("Animal não encontrado!");
-                    }
-                    break;
+
 
                 case 3:
                     System.out.println("\n");
@@ -113,8 +111,13 @@ public class Main {
                                 System.out.println("Histórico médico adicionado com sucesso!");
 
                             } catch (ParseException e) {
-                                System.out.println("Erro ao converter a data! Certifique-se de usar o formato dd/MM/yyyy.");
+                                System.out.println("Data inválida! Certifique-se de usar o formato dd/MM/yyyy.");
+                                return;
+                            }catch (NullPointerException e) {
+                                System.out.println("Preencha os campos corretamente!!!");
+                                return;
                             }
+
                         }else{
                             System.out.println("Animal não encontrado!");
                         }
@@ -136,5 +139,16 @@ public class Main {
         }
 
         scanner.close();
+    }
+    private static String readNonEmptyInput(Scanner scanner, String message) {
+        System.out.println(message);
+        String input = scanner.nextLine();
+
+        if (input.isEmpty()) {
+            System.out.println("Dados inválidos. Por favor, digite novamente.\n");
+            return readNonEmptyInput(scanner, message); // Chamada recursiva se a entrada estiver vazia
+        }
+
+        return input;
     }
 }
