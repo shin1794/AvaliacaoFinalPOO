@@ -70,6 +70,16 @@ public class Clinica {
         }
     }
 
+    public void listarHistoricoMedico(Animal animal) {
+        int index = animaisRegistrados.indexOf(animal);
+        if (index != -1) {
+            String historicoAnimal = historicosMedicos.get(index);
+            System.out.println("Histórico médico do bichinho " + animal.getNome() + ":");
+            System.out.println(historicoAnimal);
+        } else {
+            System.out.println("Histórico médico não encontrado para o animal " + animal.getNome());
+        }
+    }
 }
 
 
