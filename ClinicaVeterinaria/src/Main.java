@@ -22,8 +22,8 @@ public class Main {
             System.out.println("2. Remover Registro");
             System.out.println("3. Listar Animais");
             System.out.println("4. Adicionar Histórico Médico");
-            System.out.println("5. Listar Histórico Medico de um animal");
-            System.out.println("6. Listar Históricos Medicos");
+            System.out.println("5. Listar Históricos Medicos de todos os animais cadastrados");
+            System.out.println("6. Listar Histórico Medico de um animal");
             System.out.println("7. Sair");
             System.out.println("Digite a opção desejada: ");
 
@@ -31,7 +31,8 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    try{
+                    scanner.nextLine(); // Limpar o buffer
+                    try {
                         String nome = readNonEmptyInput(scanner, "Digite o nome do animal: ");
                         String especie = readNonEmptyInput(scanner, "Digite a espécie do animal: ");
                         String dono = readNonEmptyInput(scanner, "Digite o nome do dono do animal: ");
@@ -54,14 +55,14 @@ public class Main {
                             System.out.println("Opção inválida!");
                         }
 
-                } catch (Exception e) {
-                    System.out.println("Exceção capturada: " + e.getMessage());
-                }
+                    } catch (Exception e) {
+                        System.out.println("Exceção capturada: " + e.getMessage());
+                    }
 
                     break;
 
                 case 2:
-                    try{
+                    try {
                         scanner.nextLine(); // Limpar o buffer
                         String nomeAnimal = readNonEmptyInput(scanner, "Digite o nome do animal a ser removido: ");
 
@@ -70,12 +71,12 @@ public class Main {
                                 clinica.removerRegistro(animal);
                                 System.out.println("Registro removido com sucesso!");
                                 break;
-                            }else{
+                            } else {
                                 System.out.println("Animal não encontrado!");
                             }
                         }
                         break;
-                    }catch (Exception e) {
+                    } catch (Exception e) {
                         System.out.println("Exceção capturada: " + e.getMessage());
                     }
 
@@ -87,8 +88,7 @@ public class Main {
 
                 case 4:
                     scanner.nextLine(); // Limpar o buffer
-                    System.out.println("Digite o nome do animal para adicionar o histórico médico: ");
-                    String nomeAnimalHistorico = scanner.nextLine();
+                    String nomeAnimalHistorico = readNonEmptyInput(scanner, "Digite o nome do animal para adicionar o histórico médico: ");
 
                     for (Animal animal : clinica.getAnimaisRegistrados()) {
                         if (animal.getNome().equalsIgnoreCase(nomeAnimalHistorico)) {
@@ -114,12 +114,14 @@ public class Main {
                             } catch (ParseException e) {
                                 System.out.println("Data inválida! Certifique-se de usar o formato dd/MM/yyyy.");
                                 return;
-                            }catch (NullPointerException e) {
+                            } catch (NullPointerException e) {
                                 System.out.println("Preencha os campos corretamente!!!");
                                 return;
+                            } catch (Exception e) {
+                                System.out.println("Exceção capturada: " + e.getMessage());
                             }
 
-                        }else{
+                        } else {
                             System.out.println("Animal não encontrado!");
                         }
                     }
@@ -132,25 +134,39 @@ public class Main {
                     break;
 
                 case 6:
+                    try{
+                        scanner.nextLine(); // Limpar o buffer
+                        String nomeAnimal = readNonEmptyInput(scanner,"Digite o nome do animal cadastrado:");
 
-                    break;
+                        if (clinica.animalExiste(nomeAnimal)) {
+                            Animal animalEncontrado = clinica.encontrarAnimalPorNome(nomeAnimal);
+                            clinica.listarHistoricoMedico(animalEncontrado);
+                        } else {
+                            System.out.println("Animal não encontrado.");
+                        }
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Exceção capturada: " + e.getMessage());
+                    }
+
                 case 7:
                     executando = false;
                     break;
-
                 default:
                     System.out.println("Opção inválida!");
+
+            scanner.close();
             }
+
         }
 
-        scanner.close();
     }
     private static String readNonEmptyInput(Scanner scanner, String message) {
         System.out.println(message);
         String input = scanner.nextLine();
 
         if (input.isEmpty()) {
-            System.out.println("Dados inválidos. Por favor, digite novamente.\n");
+            System.out.println("A entrada não pode ser vazia. Por favor, digite novamente.\n");
             return readNonEmptyInput(scanner, message); // Chamada recursiva se a entrada estiver vazia
         }
 

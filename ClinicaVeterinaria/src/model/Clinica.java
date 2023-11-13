@@ -1,6 +1,7 @@
 package model;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Clinica {
     private List<Animal> animaisRegistrados;
     private List<String> historicosMedicos;
@@ -68,6 +69,24 @@ public class Clinica {
             System.out.println(historicoAnimal);
             System.out.println("--------------------------------------");
         }
+    }
+
+    public boolean animalExiste(String nomeAnimal) {
+        for (Animal animal : animaisRegistrados) {
+            if (animal.getNome().equalsIgnoreCase(nomeAnimal)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Animal encontrarAnimalPorNome(String nomeAnimal) {
+        for (Animal animal : animaisRegistrados) {
+            if (animal.getNome().equalsIgnoreCase(nomeAnimal)) {
+                return animal;
+            }
+        }
+        return null; // Retorna null se o animal não for encontrado
     }
 
     public void listarHistoricoMedico(Animal animal) {
