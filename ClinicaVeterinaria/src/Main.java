@@ -37,23 +37,27 @@ public class Main {
                         String especie = readNonEmptyInput(scanner, "Digite a espécie do animal: ");
                         String dono = readNonEmptyInput(scanner, "Digite o nome do dono do animal: ");
 
-                        System.out.println("O animal é um cão (1) ou um gato (2)? ");
-                        int tipoAnimal = scanner.nextInt();
-                        scanner.nextLine(); // Limpar o buffer
 
-                        if (tipoAnimal == 1) {
-                            String raca = readNonEmptyInput(scanner, "Digite a raça do cão: ");
-                            Cao cao = new Cao(nome, especie, dono, raca);
-                            clinica.registrarAnimal(cao);
-                            System.out.println("Cão registrado com sucesso!");
-                        } else if (tipoAnimal == 2) {
-                            String tipoPelagem = readNonEmptyInput(scanner, "Digite o tipo de pelagem do gato: ");
-                            Gato gato = new Gato(nome, especie, dono, tipoPelagem);
-                            clinica.registrarAnimal(gato);
-                            System.out.println("Gato registrado com sucesso!");
-                        } else {
-                            System.out.println("Opção inválida!");
-                        }
+                        int tipoAnimal;
+
+                        do{
+                            System.out.println("O animal é um cão (1) ou um gato (2)? ");
+                            tipoAnimal = Integer.parseInt(scanner.nextLine()); // Limpar o buffer
+                            if (tipoAnimal == 1) {
+                                String raca = readNonEmptyInput(scanner, "Digite a raça do cão: ");
+                                Cao cao = new Cao(nome, especie, dono, raca);
+                                clinica.registrarAnimal(cao);
+                                System.out.println("Cão registrado com sucesso!");
+                            } else if (tipoAnimal == 2) {
+                                String tipoPelagem = readNonEmptyInput(scanner, "Digite o tipo de pelagem do gato: ");
+                                Gato gato = new Gato(nome, especie, dono, tipoPelagem);
+                                clinica.registrarAnimal(gato);
+                                System.out.println("Gato registrado com sucesso!");
+                            } else {
+                                System.out.println("Opção inválida!");
+
+                            }
+                        }while(tipoAnimal <=0 || tipoAnimal >= 3);
 
                     } catch (Exception e) {
                         System.out.println("Exceção capturada: " + e.getMessage());
@@ -92,6 +96,7 @@ public class Main {
 
                     for (Animal animal : clinica.getAnimaisRegistrados()) {
                         if (animal.getNome().equalsIgnoreCase(nomeAnimalHistorico)) {
+                            scanner.nextLine(); // Limpar o buffer
                             System.out.println("Digite a data do histórico médico(dd/MM/yyyy)");
                             String dataString = scanner.nextLine();
                             SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -110,12 +115,9 @@ public class Main {
 
                                 clinica.adicionarHistoricoMedico(animal, dataFormatada, sintomas, diagnostico, tratamento, observacoes);
                                 System.out.println("Histórico médico adicionado com sucesso!");
-
+                                break;
                             } catch (ParseException e) {
                                 System.out.println("Data inválida! Certifique-se de usar o formato dd/MM/yyyy.");
-                                return;
-                            } catch (NullPointerException e) {
-                                System.out.println("Preencha os campos corretamente!!!");
                                 return;
                             } catch (Exception e) {
                                 System.out.println("Exceção capturada: " + e.getMessage());

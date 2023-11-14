@@ -7,7 +7,6 @@
     <list default="true" id="8ce15ab9-a249-4bb1-b2e6-dfe3f2a23d75" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClinicaVeterinaria/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClinicaVeterinaria/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Clinica.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Clinica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ClinicaVeterinaria/src/Main.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -59,7 +61,8 @@
       <workItem from="1699879807900" duration="493000" />
       <workItem from="1699880361269" duration="723000" />
       <workItem from="1699881113309" duration="164000" />
-      <workItem from="1699881285473" duration="2768000" />
+      <workItem from="1699881285473" duration="3341000" />
+      <workItem from="1699999628328" duration="2673000" />
     </task>
     <servers />
   </component>
