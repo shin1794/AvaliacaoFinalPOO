@@ -96,11 +96,10 @@ public class Main {
 
                     for (Animal animal : clinica.getAnimaisRegistrados()) {
                         if (animal.getNome().equalsIgnoreCase(nomeAnimalHistorico)) {
-                            scanner.nextLine(); // Limpar o buffer
+
                             System.out.println("Digite a data do histórico médico(dd/MM/yyyy)");
                             String dataString = scanner.nextLine();
                             SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-
                             try {
                                 Date data = dateFormatter.parse(dataString);
                                 String dataFormatada = dateFormatter.format(data);
@@ -122,7 +121,6 @@ public class Main {
                             } catch (Exception e) {
                                 System.out.println("Exceção capturada: " + e.getMessage());
                             }
-
                         } else {
                             System.out.println("Animal não encontrado!");
                         }
