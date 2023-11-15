@@ -161,6 +161,12 @@ public class Main {
         }
 
     }
+    /*
+    O método abaixo serve como um filtro para entradas vazias do usuário.
+    Ele lê uma entrada do usuário e retorna a entrada somente se ela não estiver vazia.
+    Se a entrada estiver vazia, o método imprime uma mensagem de erro e solicita que o usuário digite novamente.
+    O método é chamado recursivamente até que uma entrada não vazia seja fornecida.
+     */
     private static String readNonEmptyInput(Scanner scanner, String message) {
         System.out.println(message);
         String input = scanner.nextLine();

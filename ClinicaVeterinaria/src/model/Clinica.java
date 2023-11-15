@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Clinica {
+    //Classe clínica: possui todos os métodos que a Classe Main irá chamar e executar
+
+
     private List<Animal> animaisRegistrados;
     private List<String> historicosMedicos;
 
@@ -47,6 +50,17 @@ public class Clinica {
         }
     }
 
+
+    /*
+    indexOf: usado para a posição do animal na lista animaisRegistrados.
+    Se não for encontrado, o método retorna -1.
+     */
+
+    /*
+    Método criado para adicionar e vincular um histórico médico a um animal.
+    Ele procura o índice do objeto Animal na lista animaisRegistrados usando o método indexOf() e, se encontrado,
+    adiciona as informações médicas à String correspondente na lista historicosMedicos.
+    */
     public void adicionarHistoricoMedico(Animal animal, String dataFormatada, String sintomas,
                                          String diagnostico, String tratamento, String observacoes) {
         int index = animaisRegistrados.indexOf(animal);

@@ -1,6 +1,11 @@
 package model;
 
 public class Animal {
+    /*
+    Classe animal: classe pai ou superclasse
+    Classe cão: classe filho ou subclasse
+    Classe gato: classe filho ou subclasse
+     */
     private String nome;
     private String especie;
     private String dono;
@@ -35,6 +40,11 @@ public class Animal {
         this.dono = dono;
     }
 
+    /*
+    Retorna uma representação em String do objeto Animal.
+    O método toString() retorna uma String que contém o nome do dono,
+    o nome do animal e a espécie do animal, cada um em uma linha separada.
+     */
     public String toString(){
         return "Dono: " + dono + "\n" +
                 "Nome do bichinho: " + nome + "\n" +
