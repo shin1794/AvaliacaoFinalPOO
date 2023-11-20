@@ -7,10 +7,6 @@
     <list default="true" id="8ce15ab9-a249-4bb1-b2e6-dfe3f2a23d75" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClinicaVeterinaria/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClinicaVeterinaria/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Cao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Cao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Clinica.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Clinica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Gato.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClinicaVeterinaria/src/model/Gato.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,20 +27,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/FATEC_PC/4 semestre/Programação orientada a objeto/ClinicaVeterinaria - Copia&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/yishi/Downloads/AvaliacaoFinalPOO-main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,7 +64,9 @@
       <workItem from="1699881285473" duration="3341000" />
       <workItem from="1699999628328" duration="3103000" />
       <workItem from="1700002789125" duration="1241000" />
-      <workItem from="1700058969858" duration="1641000" />
+      <workItem from="1700058969858" duration="1971000" />
+      <workItem from="1700405259907" duration="849000" />
+      <workItem from="1700489856496" duration="171000" />
     </task>
     <servers />
   </component>

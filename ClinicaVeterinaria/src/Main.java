@@ -22,7 +22,7 @@ public class Main {
             System.out.println("2. Remover Registro");
             System.out.println("3. Listar Animais");
             System.out.println("4. Adicionar Histórico Médico");
-            System.out.println("5. Listar Históricos Medicos de todos os animais cadastrados");
+            System.out.println("5. Listar Históricos Medicos");
             System.out.println("6. Listar Histórico Medico de um animal");
             System.out.println("7. Sair");
             System.out.println("Digite a opção desejada: ");
