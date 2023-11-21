@@ -1,5 +1,5 @@
-package model;
 
+package model;
 public class Animal {
     /*
     Classe animal: classe pai ou superclasse
@@ -10,32 +10,29 @@ public class Animal {
     private String especie;
     private String dono;
 
+    //Método construtor
     public Animal(String nome, String especie, String dono) {
         this.nome = nome;
         this.especie = especie;
         this.dono = dono;
     }
 
+    //métodos getter e setter
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public String getEspecie() {
         return especie;
     }
-
     public void setEspecie(String especie) {
         this.especie = especie;
     }
-
     public String getDono() {
         return dono;
     }
-
     public void setDono(String dono) {
         this.dono = dono;
     }
@@ -51,3 +48,4 @@ public class Animal {
                 "Espécie: " + especie + "\n";
     }
 }
+

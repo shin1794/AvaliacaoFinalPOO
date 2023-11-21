@@ -1,5 +1,5 @@
-package model;
 
+package model;
 public class Cao extends Animal{
     /*
     Classe animal: classe pai ou superclasse
@@ -11,15 +11,12 @@ public class Cao extends Animal{
         super(nome, especie, dono);
         this.raca = raca;
     }
-
     public String getRaca() {
         return raca;
     }
-
     public void setRaca(String raca) {
         this.raca = raca;
     }
-
     /*
     Permite retornar a representação em String do objeto Animal
     mais uma string que contém a raça do cão.
