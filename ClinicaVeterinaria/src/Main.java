@@ -97,7 +97,7 @@ public class Main {
                     for (Animal animal : clinica.getAnimaisRegistrados()) {
                         if (animal.getNome().equalsIgnoreCase(nomeAnimalHistorico)) {
 
-                            System.out.println("Digite a data do histórico médico(dd/MM/yyyy)");
+                            System.out.println("Digite a data do histórico médico (dd/MM/yyyy)");
                             String dataString = scanner.nextLine();
                             SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
                             try {

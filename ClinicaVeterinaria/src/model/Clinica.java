@@ -89,9 +89,7 @@ public class Clinica {
         }
     }
 
-    /*
-    Método listarHistoricoMedicos
-     */
+    //Método listarHistoricoMedicos: listar os históricos médicos de animais registrados
     public void listarHistoricosMedicos() {
         for (int i = 0; i < animaisRegistrados.size(); i++) {
             Animal animal = animaisRegistrados.get(i);
@@ -102,6 +100,13 @@ public class Clinica {
         }
     }
 
+    /*
+    Método animalExiste: verifica se um animal com um determinado
+    nome existe na lista de animaisRegistrados.
+    Ele percorre a lista e compara o nome de cada animal com o nomeAnimal fornecido.
+    Se encontrar uma correspondência, retorna true.
+    Se não encontrar nenhuma correspondência após percorrer toda a lista, retorna false.
+     */
     public boolean animalExiste(String nomeAnimal) {
         for (Animal animal : animaisRegistrados) {
             if (animal.getNome().equalsIgnoreCase(nomeAnimal)) {
@@ -111,6 +116,12 @@ public class Clinica {
         return false;
     }
 
+    /*
+    Método encontrarAnimalPorNome:
+    Este método é semelhante ao anterior, mas em vez de retornar um booleano,
+    ele retorna o objeto Animal que corresponde ao nomeAnimal fornecido.
+    Se não encontrar nenhuma correspondência, retorna null.
+     */
     public Animal encontrarAnimalPorNome(String nomeAnimal) {
         for (Animal animal : animaisRegistrados) {
             if (animal.getNome().equalsIgnoreCase(nomeAnimal)) {
@@ -120,6 +131,14 @@ public class Clinica {
         return null; // Retorna null se o animal não for encontrado
     }
 
+    /*
+    imprime o histórico médico de um animal específico.
+    Primeiro, ele encontra o índice do animal na lista de animaisRegistrados.
+    Se o animal estiver na lista, ele obtém o histórico médico correspondente
+    da lista de historicosMedicos e o imprime.
+    Se o animal não estiver na lista, ele imprime uma mensagem informando
+    que o histórico médico não foi encontrado para o animal.
+     */
     public void listarHistoricoMedico(Animal animal) {
         int index = animaisRegistrados.indexOf(animal);
         if (index != -1) {
