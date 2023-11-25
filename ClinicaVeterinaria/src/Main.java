@@ -92,7 +92,8 @@ public class Main {
 
                 case 4:
                     scanner.nextLine(); // Limpar o buffer
-                    String nomeAnimalHistorico = readNonEmptyInput(scanner, "Digite o nome do animal para adicionar o histórico médico: ");
+                    String nomeAnimalHistorico = readNonEmptyInput(scanner,
+                            "Digite o nome do animal para adicionar o histórico médico: ");
 
                     for (Animal animal : clinica.getAnimaisRegistrados()) {
                         if (animal.getNome().equalsIgnoreCase(nomeAnimalHistorico)) {
@@ -112,7 +113,8 @@ public class Main {
                                 System.out.println("Digite as observações: ");
                                 String observacoes = scanner.nextLine();
 
-                                clinica.adicionarHistoricoMedico(animal, dataFormatada, sintomas, diagnostico, tratamento, observacoes);
+                                clinica.adicionarHistoricoMedico(animal, dataFormatada, sintomas,
+                                        diagnostico, tratamento, observacoes);
                                 System.out.println("Histórico médico adicionado com sucesso!");
                                 break;
                             } catch (ParseException e) {
