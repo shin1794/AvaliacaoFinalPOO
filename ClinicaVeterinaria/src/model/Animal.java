@@ -10,7 +10,7 @@ public class Animal {
     private String especie;
     private String dono;
 
-    //Método construtor
+    //Método construtor: método usado para iniciar as variáveis
     public Animal(String nome, String especie, String dono) {
         this.nome = nome;
         this.especie = especie;

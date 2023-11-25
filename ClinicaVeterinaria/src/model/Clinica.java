@@ -31,11 +31,21 @@ public class Clinica {
         this.historicosMedicos = historicosMedicos;
     }
 
+    /*
+    Método registrarAnimal: recebe o objeto do tipo animal e adiciona ele na lista "registrarAnimal".
+    EM seguida, adiciona uma string vazia à lista historicosMedicos,
+    representando o histórico médico dos animais.
+     */
     public void registrarAnimal(Animal animal) {
         animaisRegistrados.add(animal);
         historicosMedicos.add("");
     }
 
+    /*
+    Método removerRegistro: o método obtém o índice do objeto animal na lista animaisRegistrados.
+    Se o animal não estiver na lista, indexOf retornará -1.
+    Se o animal estiver na lista, esta linha remove o animal da lista animaisRegistrados e seu histórico médico.
+     */
     public void removerRegistro(Animal animal) {
         int index = animaisRegistrados.indexOf(animal);
         if (index != -1) {
@@ -44,6 +54,10 @@ public class Clinica {
         }
     }
 
+    /*
+    Método listarAnimais: percorre a lista animaisRegistrados e
+    imprime
+     */
     public void listarAnimais() {
         for (Animal animal : animaisRegistrados) {
             System.out.println(animal);
@@ -75,6 +89,9 @@ public class Clinica {
         }
     }
 
+    /*
+    Método listarHistoricoMedicos
+     */
     public void listarHistoricosMedicos() {
         for (int i = 0; i < animaisRegistrados.size(); i++) {
             Animal animal = animaisRegistrados.get(i);
